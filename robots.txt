@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://genesisunit.github.io/saturn_exagon.github.io/sitemap.xml
