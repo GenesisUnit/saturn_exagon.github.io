@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturn Exagon</title>
+    <link rel="icon" href="SaturnExagon-Logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        const preferReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (preferReducedMotion) {
+            document.documentElement.style.setProperty('--animation-duration', '0s');
+        }
+    </script>
+</head>
+<body>
+    <div class="wave-container">
+        <div class="wave"></div>
+    </div>
+    <div class="main-wrapper">
+        <div id="sidebar" class="sidebar closed">
+            <button class="closeBtn" onclick="toggleMenu()">✕</button>
+            <img src="SaturnExa.png" class="logo">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#merch" class="nav-link">Merch</a>
+            <a href="#art" class="nav-link">Art</a>
+            <a href="#between" class="nav-link">Gallery</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <div class="language-selector">
+                <button class="lang-btn" onclick="changeLanguage('it')">🇮🇹 IT</button>
+                <button class="lang-btn" onclick="changeLanguage('en')">🇬🇧 EN</button>
+                <button class="lang-btn" onclick="changeLanguage('es')">🇪🇸 ES</button>
+                <button class="lang-btn" onclick="changeLanguage('fr')">🇫🇷 FR</button>
+                <button class="lang-btn" onclick="changeLanguage('de')">🇩🇪 DE</button>
+            </div>
+            <div id="userProfile" class="user-profile" style="display:none; margin-top: auto; padding: 20px 0; border-top: 1px solid #800080;">
+                <img id="userProfilePic" src="" alt="Profilo" class="user-pic">
+                <p id="userName" style="margin: 10px 0; font-size: 14px;"></p>
+                <button onclick="handleSignOut()" class="signOutBtn">Esci</button>
+            </div>
+        </div>
+        <header id="header" class="fade-in-header">
+            <div class="header-title">
+                Saturn Exagon
+            </div>
+            <div class="menu-container">
+                <button class="menuBtn" onclick="toggleMenu()">☰</button>
+                <span class="menuText">Menù</span>
+            </div>
+
+            <div class="auth-buttons" id="authButtons">
+                <button class="authBtn" onclick="document.getElementById('signInModal').style.display='block'">Sign in</button>
+                <button class="authBtn" onclick="document.getElementById('signUpModal').style.display='block'">Log in</button>
+            </div>
+            
+            <div class="auth-buttons" id="userButtons" style="display:none;">
+                <span id="userNameHeader" class="user-name-header"></span>
+                <button class="authBtn" onclick="handleSignOut()">Esci</button>
+            </div>
+        </header>
+        <main>
+            <section id="home" class="hero fade-in-content">
+                <h1 class="bigTitle">
+                    All in one hexagon
+                </h1>
+                <div class="story-container">
+                    <h2 class="story-title" data-i18n="story_title">Saturn Experience</h2>
+                    <p class="story-text" data-i18n="story_p1"></p>
+                    <p class="story-text" data-i18n="story_p2"></p>
+                    <p class="story-text" data-i18n="story_p3"></p>
+                    <p class="story-text" data-i18n="story_p4"></p>
+                </div>
+            </section>
+
+            <section id="merch" class="scroll-fade">
+                <h1 class="sectionTitle">Hexagon Merch</h1>
+                <div class="grid grid-init grid-4">
+                    <div class="item">
+                        <img src="WonderOfU.png" alt="Maglietta 1">
+                        <a href="https://amzn.eu/d/0ddEU9f3" class="glitch" data-text="Buy now">Buy now</a>
+                    </div>
+                    <div class="item">
+                        <img src="Heaven.png" alt="Maglietta 2">
+                        <a href="https://amzn.eu/d/09Aua08H" class="glitch" data-text="Buy now">Buy now</a>
+                    </div>
+                    <div class="item">
+                        <img src="Josuke.png" alt="Maglietta 3">
+                        <a href="https://amzn.eu/d/0dE9l5ld" class="glitch" data-text="Buy now">Buy now</a>
+                    </div>
+                    <div class="item">
+                        <img src="Joseph.png" alt="Maglietta 4">
+                        <a href="https://amzn.eu/d/06RzzaKF" class="glitch" data-text="Buy now">Buy now</a>
+                    </div>
+                    <div class="item">
+                        <img src="JoBros.png" alt="Maglietta 5">
+                        <a href="https://amzn.eu/d/0ccmLXyd" class="glitch" data-text="Buy now">Buy now</a>
+                    </div>
+                    <div class="item">
+                        <img src="Giorno.png" alt="Maglietta 6">
+                        <a href="https://amzn.eu/d/0hAE2Gbr" class="glitch" data-text="Buy now">Buy now</a>
+                    </div>
+                    <div class="item">
+                        <img src="Jotaro.png" alt="Maglietta 7">
+                        <a href="https://amzn.eu/d/0iZfRJbY" class="glitch" data-text="Buy now">Buy now</a>
+                    </div>
+                    <div class="item">
+                        <img src="Kira.png" alt="Maglietta 8">
+                        <a href="https://amzn.eu/d/08us3PTE" class="glitch" data-text="Buy now">Buy now</a>
+                    </div>
+                    <div class="item">
+                        <img src="Diego.png" alt="Maglietta 9">
+                        <a href="https://amzn.eu/d/0737khYr" class="glitch" data-text="Buy now">Buy now</a>
+                    </div>
+                    <div class="item">
+                        <img src="Gyro.png" alt="Maglietta 10">
+                        <a href="https://amzn.eu/d/08chIbkN" class="glitch" data-text="Buy now">Buy now</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="art" class="scroll-fade">
+                <h1 class="sectionTitle">Beyond the reality</h1>
+                <div class="grid grid-init grid-4">
+                    <div class="item"><img src="Opera_senza_titolo.png" alt="Arte 1"></div>
+                    <div class="item"><img src="Opera_senza_titolo 1.png" alt="Arte 2"></div>
+                    <div class="item"><img src="Opera_senza_titolo 2.png" alt="Arte 3"></div>
+                    <div class="item"><img src="Opera_senza_titolo 3.png" alt="Arte 4"></div>
+                    <div class="item"><img src="Opera_senza_titolo 4.png" alt="Arte 5"></div>
+                    <div class="item"><img src="Opera_senza_titolo 5.png" alt="Arte 6"></div>
+                    <div class="item"><img src="Opera_senza_titolo 6.png" alt="Arte 7"></div>
+                    <div class="item"><img src="Opera_senza_titolo 7.png" alt="Arte 8"></div>
+                    <div class="item"><img src="Opera_senza_titolo 8.png" alt="Arte 9"></div>
+                    <div class="item"><img src="Opera_senza_titolo 9.png" alt="Arte 10"></div>
+                    <div class="item"><img src="Opera_senza_titolo 10.png" alt="Arte 11"></div>
+                </div>
+            </section>
+
+            <section id="between" class="scroll-fade">
+                <div class="between-container">
+                    <div class="features-box">
+                        <h2 data-i18n="why_saturn">Perché Saturn Exagon</h2>
+                        <ul class="features-list">
+                            <li>
+                                <span class="feature-icon">#</span>
+                                <p data-i18n="feature_1"></p>
+                            </li>
+                            <li>
+                                <span class="feature-icon">#</span>
+                                <p data-i18n="feature_2"></p>
+                            </li>
+                            <li>
+                                <span class="feature-icon">#</span>
+                                <p data-i18n="feature_3"></p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="carousel-box">
+                        <img src="JolyneStar.PNG" alt="Immagine 1" class="carousel-image active">
+                        <img src="GiornoStar.PNG" alt="Immagine 2" class="carousel-image">
+                        <img src="JosukeStar.PNG" alt="Immagine 3" class="carousel-image">
+                        <img src="JotaroStar.PNG" alt="Immagine 4" class="carousel-image">
+                        <img src="JosephStar.PNG" alt="Immagine 5" class="carousel-image">
+                        <img src="JonathanStar.PNG" alt="Immagine 6" class="carousel-image">
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="scroll-fade">
+                <h1 class="sectionTitle">Social media</h1>
+                <div class="grid socialGrid">
+                    <div class="item">
+                        <img src="https://www.addlance.com/blog/wp-content/uploads/2021/10/tiktok-logo.png" alt="TikTok">
+                        <button class="glitch social-btn" data-social="tiktok" data-text="View">View</button>
+                    </div>
+                    <div class="item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                        <button class="glitch social-btn" data-social="instagram" data-text="View">View</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer">
+                <div class="contact-item">
+                    <span>genesisenvironment@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>+39 3791970174</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('signInModal').style.display='none'">&times;</span>
+            <h2 data-i18n="signin_title">Accedi con Google</h2>
+            <div id="googleSignInButton"></div>
+        </div>
+    </div>
+
+    <div id="signUpModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('signUpModal').style.display='none'">&times;</span>
+            <h2 data-i18n="signup_title">Registrati con Google</h2>
+            <p style="text-align: center; color: #e0e0e0; margin-bottom: 20px;" data-i18n="signup_desc">Usa il tuo account Google per registrarti</p>
+            <div id="googleSignUpButton"></div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="social.js"></script>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+
+</body>
+</html>
